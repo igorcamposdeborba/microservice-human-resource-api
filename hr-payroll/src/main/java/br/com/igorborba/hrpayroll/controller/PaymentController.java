@@ -1,6 +1,6 @@
 package br.com.igorborba.hrpayroll.controller;
 import br.com.igorborba.hrpayroll.entities.dto.PaymentDTO;
-import br.com.igorborba.hrpayroll.services.PaymentService;
+import br.com.igorborba.hrpayroll.services.impl.PaymentService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
