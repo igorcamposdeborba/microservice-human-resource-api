@@ -1,14 +1,15 @@
 package br.com.igorborba.hruser.entites;
 
+import java.io.Serializable;
+import java.util.Objects;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tb_role")
 public class Role implements Serializable {
     private static final long serialVersionUID = 1L; // transformar o objeto em bytes para trafegar pela rede
 
@@ -17,13 +18,16 @@ public class Role implements Serializable {
     private Long id;
     private String roleName;
 
-    @ManyToMany(mappedBy = "roles") // Associação gerenciada pela outra classe
-    private Set<User> users = new HashSet<>();
+//    @ManyToMany(mappedBy = "roles") // Associação gerenciada pela outra classe
+//    private Set<User> users = new HashSet<>();
 
+    public Role() {}
     public Role(Long id, String roleName) {
         this.id = id;
         this.roleName = roleName;
     }
+
+
 
     public Long getId() {
         return id;

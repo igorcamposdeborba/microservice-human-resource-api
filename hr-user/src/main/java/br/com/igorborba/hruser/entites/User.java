@@ -19,11 +19,11 @@ public class User implements Serializable {
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER) // eager: buscar todas as tabelas relacionadas
-    @JoinTable(
-            name = "user_roles",
+    @JoinTable(name = "tb_user_role",
             joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    Set<Role> roles = new HashSet<>(); // associação Set para não ter repetição de opções de papeis de acesso
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>(); // associação Set para não ter repetição de opções de papeis de acesso
 
     public User(){}
 
