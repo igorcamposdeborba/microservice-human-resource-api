@@ -15,6 +15,8 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // id gerado pelo banco de dados
     private Long id;
     private String name;
+
+    @Column(unique = true) // não permite email duplicado
     private String email;
     private String password;
 
