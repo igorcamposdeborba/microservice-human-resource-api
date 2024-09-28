@@ -10,7 +10,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Configuration
 public class AppConfig {
 
-	@Value("myappsecret123")
+	@Value("${jwt.secret}") // pegar chave do application.properties do github: https://github.com/igorcamposdeborba/microservice-human-resource-api/blob/main/application.properties
 	private String jwtSecret;
 	
 	@Bean

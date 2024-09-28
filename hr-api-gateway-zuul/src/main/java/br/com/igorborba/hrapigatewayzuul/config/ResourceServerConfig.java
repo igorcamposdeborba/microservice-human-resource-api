@@ -19,7 +19,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     private static final String [] OPERATOR = { "/hr-worker/**" }; // rota disponível para quem tem role de operador
 
-    private static final String [] ADMIN = { "/hr-payroll/**", "/hr-user/**" }; // rota disponível para quem tem role de admin
+    private static final String [] ADMIN = { "/hr-payroll/**", "/hr-user/**",
+                                             "/actuator/**", "/hr-worker/actuator/**", "/hroauth/actuator/**" }; // rota disponível para quem tem role de admin
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {

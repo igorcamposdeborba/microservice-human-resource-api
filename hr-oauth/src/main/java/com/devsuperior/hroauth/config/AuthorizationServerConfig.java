@@ -17,10 +17,10 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableAuthorizationServer // Indica que este Microsservico é um authorization server (servidor de autenticacao)
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 	
-	@Value("myappname123")
+	@Value("${oauth.client.name}") // pegar chave do application.properties do github: https://github.com/igorcamposdeborba/microservice-human-resource-api/blob/main/application.properties
 	private String clientName;
 	
-	@Value("myappsecret123")
+	@Value("${oauth.client.secret}")
 	private String clientSecret;
 	
 	@Autowired
