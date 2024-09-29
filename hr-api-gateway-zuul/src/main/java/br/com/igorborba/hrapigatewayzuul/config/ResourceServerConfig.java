@@ -24,12 +24,13 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Autowired
     private JwtTokenStore tokenStore;
 
-    private static final String [] PUBLIC = { "/hr-oauth/oauth/token" }; // rota para fazer autenticacao: pública
+    private static final String [] PUBLIC = { "/hr-oauth/oauth/token", "/hr-worker/actuator/health", "/hr-worker/actuator/metrics/jvm.buffer.memory.used" }; // rota para fazer autenticacao: pública
 
     private static final String [] OPERATOR = { "/hr-worker/**" }; // rota disponível para quem tem role de operador
 
     private static final String [] ADMIN = { "/hr-payroll/**", "/hr-user/**",
                                              "/actuator/**", "/hr-worker/actuator/**", "/hroauth/actuator/**" }; // rota disponível para quem tem role de admin
+
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -39,6 +40,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers(PUBLIC).permitAll()
+                .antMatchers("/hr-worker/actuator/swagger-ui").permitAll()
                 .antMatchers(HttpMethod.GET, OPERATOR).hasAnyRole("OPERATOR", "ADMIN")
                 .antMatchers(ADMIN).hasAnyRole("ADMIN")
                 .anyRequest().authenticated(); // liberar autorizacao por tipo de role

@@ -1,6 +1,6 @@
-package br.com.igorborba.hrworker.entities.dto;
+package br.com.igorborba.consumerrabbitmq.entities.dto;
 
-import br.com.igorborba.hrworker.entities.Worker;
+import br.com.igorborba.consumerrabbitmq.entities.Worker;
 
 import java.io.Serializable;
 
