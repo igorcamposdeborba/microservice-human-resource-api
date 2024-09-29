@@ -1,4 +1,4 @@
-package com.devsuperior.hroauth.entities;
+package com.iborba.hroauth.entities;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.devsuperior.hroauth.resources;
+package com.iborba.hroauth.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.hroauth.entities.User;
-import com.devsuperior.hroauth.services.UserService;
+import com.iborba.hroauth.entities.User;
+import com.iborba.hroauth.services.UserService;
 
 @RestController
 @RequestMapping(value = "/user")

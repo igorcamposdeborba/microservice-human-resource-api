@@ -1,4 +1,4 @@
-package com.devsuperior.hroauth;
+package com.iborba.hroauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
